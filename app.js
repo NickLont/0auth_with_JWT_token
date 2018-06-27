@@ -26,7 +26,8 @@ app.use((req, res, next) => {
   next()
 })
 app.use(express.static(path.resolve(__dirname, 'public'))) // set the static directory for our public files
-// Take token from header Authentication: Bearer :token and put it in req.token
+// Take token from:
+// header Authentication: Bearer :token OR access_token: :token in header OR body and put it in req.token
 app.use(bearerToken())
 // Body parser to validate req. object
 app.use(bodyParser.urlencoded({extended: false}))
